@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin displayFlexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin displayFlexBetween() {
+    display: flex;
+    justify-content: space-between;
+}
+
+$mainWidth: 45%;
+$blockWidth: 75%;
+body {
+    @include displayFlexCenter();
+    flex-direction: column;
+}
+
+
+/* Header */
+
+header {
+    font: {
+        size: 20px;
+        weight: bold;
+    }
+    margin: 50px 0 10px 0;
+}
+
+
+/* Main Block */
+
+main {
+    background-color: cornflowerblue;
+    @include displayFlexCenter();
+    flex-direction: column;
+    width: $mainWidth;
+    min-width: 200px;
+    border: 1px solid #2d3669;
+    border-radius: 8px;
+}
+
+.choosingCurr {
+    //background-color: #828dd1;
+    @include displayFlexCenter();
+    justify-content: space-around;
+    padding: 5px;
+    width: $blockWidth;
+    color: white;
+    margin-top: 10px;
+    font: {
+        size: 15px;
+        weight: bold;
+    }
+}
+
+@media screen and(max-width: 600px) {
+    .choosingCurr {
+        flex-direction: column;
+    }
+}
+
+.block {
+    background-color: #b2bcf7;
+    height: 50px;
+    width: 120px;
+    @include displayFlexCenter();
+    border: 1px solid #828dd1;
+    border-radius: 8px;
+    select {
+        height: 40px;
+        width: 60px;
+        border-radius: 8px;
+    }
+}
+
+
+/* From To */
+
+input {
+    margin: 5px;
+    border-radius: 4px;
+    padding: 5px;
+    width: 60%;
+}
+
+.fromAmount {
+    margin: 7px;
+    width: 100%;
+    @include displayFlexCenter();
+}
+
+
+/* Convert Button */
+
+.button {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    @include displayFlexCenter();
+}
+
+#convertButton {
+    padding: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    background-color: #b2bcf7;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 5px #999;
+}
+
+#convertButton:hover {
+    background-color: #828dd1;
+}
+
+#convertButton:active {
+    background-color: #828dd1;
+    box-shadow: 0 2px #666;
+    transform: translateY(3px);
+}
+
+
+/* Footer */
+
+footer {
+    background-color: cornflowerblue;
+    width: 30%;
+    min-width: 150px;
+    border: 1px solid #2d3669;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 5px;
+    @include displayFlexCenter();
+    flex-direction: column;
+}
+
+#rate {
+    background-color: #b2bcf7;
+    color: white;
+    border: 1px solid #828dd1;
+    border-radius: 8px;
+    font: {
+        size: 12px;
+        weight: bold;
+    }
+    height: 25px;
+    margin: 5px;
+    padding: 5px;
+    @include displayFlexCenter();
+}
